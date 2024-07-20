@@ -8,16 +8,11 @@ services:
   mspsm:
     image: ghcr.io/danielbradea/bid90/mspsm:latest
     ports:
-      - 8081:8081
+      - 8083:8083
     networks:
       - mspsm_network
     environment:
-      - PORT=8081
-      - RMQ_HOST=localhost
-      - RMQ_PORT=5672
-      - RMQ_USER=user
-      - RMQ_PASSWORD=password
-      - RMQ_VHOST=msemail
+      - PORT=8083
       - APP_URL=http://localhost:8080
       - DS_URL=jdbc:h2:file:./testdb
       - DS_DRIVER=org.h2.Driver
