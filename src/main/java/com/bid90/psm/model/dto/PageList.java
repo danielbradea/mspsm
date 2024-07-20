@@ -1,10 +1,12 @@
 package com.bid90.psm.model.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class PageList<T>  extends Response{
 

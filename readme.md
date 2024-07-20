@@ -32,15 +32,11 @@ This microservice provides functionalities for managing posts, including creatin
    ```
 3. Run the app
     ```sh
-   APP_URL=http://localhost:8080
-   DS_URL=jdbc:h2:file:./testdb
-   DS_DRIVER=org.h2.Driver
-   DS_USERNAME=sa
-   RMQ_HOST=localhost \
-   RMQ_PORT=5672 \
-   RMQ_USER=user \
-   RMQ_PASSWORD=password \
-   RMQ_VHOST=msemail \
+   APP_URL=http://localhost:8080 \
+   DS_URL=jdbc:h2:file:./testdb \
+   DS_DRIVER=org.h2.Driver \
+   DS_USERNAME=sa \
+   AUTH_SERVICE=http://localhost:8080/mslogin \
    JWT_SECRET=d5501539-43e9-4e97-8256-4ab29a5bf539 \
    mvn spring-boot:run
    ```

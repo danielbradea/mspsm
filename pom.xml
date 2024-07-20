@@ -11,7 +11,7 @@
 	<groupId>com.bid90</groupId>
 	<artifactId>psm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>psm</name>
+	<name>mspsm</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
