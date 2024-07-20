@@ -1,0 +1,25 @@
+
+
+networks:
+  mspsm_network:
+    external: false
+
+services:
+  mspsm:
+    image: ghcr.io/danielbradea/bid90/mspsm:latest
+    ports:
+      - 8081:8081
+    networks:
+      - mspsm_network
+    environment:
+      - PORT=8081
+      - RMQ_HOST=localhost
+      - RMQ_PORT=5672
+      - RMQ_USER=user
+      - RMQ_PASSWORD=password
+      - RMQ_VHOST=msemail
+      - APP_URL=http://localhost:8080
+      - DS_URL=jdbc:h2:file:./testdb
+      - DS_DRIVER=org.h2.Driver
+      - DS_USERNAME=sa
+      - JWT_SECRET=d5501539-43e9-4e97-8256-4ab29a5bf539
