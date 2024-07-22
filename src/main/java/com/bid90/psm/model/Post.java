@@ -19,7 +19,7 @@ public class Post {
     String title;
     @Column( name = "subtitle")
     String subtitle;
-    @Column( name = "description")
+    @Column( name = "description", length = 1000)
     String description;
     @Column( name = "image_name")
     String imageName;
