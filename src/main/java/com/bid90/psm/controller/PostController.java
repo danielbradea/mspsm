@@ -40,7 +40,10 @@ public class PostController {
     )
     @GetMapping("/{id}")
     public ResponseContent<PostDto> getPostById(@PathVariable Long id) {
-        return new ResponseContent<>(new PostDto(postService.findOneById(id)));
+        var response =  new ResponseContent<>(new PostDto(postService.findOneById(id)));
+        response.setSuccess(true);
+        response.setMessage("Post retrieved successfully");
+        return response;
     }
 
     @Operation(
@@ -53,7 +56,10 @@ public class PostController {
                                                @RequestParam("title")  String title,
                                                @RequestParam("subtitle")  String subtitle,
                                                @RequestParam("description")  String description) {
-        return new ResponseContent<>(new PostDto(postService.create(file, title,subtitle,description)));
+        var response =  new ResponseContent<>(new PostDto(postService.create(file, title,subtitle,description)));
+        response.setSuccess(true);
+        response.setMessage("Post created successfully");
+        return response;
     }
 
     @Operation(
@@ -68,7 +74,10 @@ public class PostController {
                              @RequestParam("subtitle")  String subtitle,
                              @RequestParam("description")  String description) throws Exception {
 
-        return new ResponseContent<>(new PostDto(postService.update(id,file,title,subtitle,description)));
+        var response = new ResponseContent<>(new PostDto(postService.update(id,file,title,subtitle,description)));
+        response.setSuccess(true);
+        response.setMessage("Post updated successfully");
+        return response;
     }
 
     @Operation(
